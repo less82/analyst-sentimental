@@ -1,0 +1,16 @@
+{
+  "name": "ai-sentiment-analyzer",
+  "version": "1.0.0",
+  "description": "AI Sentiment Analyzer with Claude Style UI",
+  "main": "backend/server.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "openai": "^4.20.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

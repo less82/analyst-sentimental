@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 감성분석</title>
+    <!-- SEO 및 폰트 설정 -->
+    <meta name="description" content="Claude 스타일의 미니멀한 AI 감성 분석 서비스입니다.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container fade-in">
+        <!-- 상단 헤더: 미니멀리즘을 위해 단순하게 구성 -->
+        <header>
+            <div class="logo">
+                <h1>AI Sentiment</h1>
+            </div>
+        </header>
+
+        <main>
+            <!-- 히어로 섹션: 깔끔한 문구와 부드러운 텍스트 색상 -->
+            <section id="hero">
+                <h2>당신의 문장을 분석합니다.</h2>
+                <p>입력된 텍스트의 감정 상태를 AI가 정밀하게 파악해 드립니다.</p>
+            </section>
+
+            <!-- Sentiment Input Card: Claude 테마의 핵심 카드 UI -->
+            <section id="analyze-section">
+                <div class="input-wrapper">
+                    <textarea id="text-input" placeholder="분석할 내용을 입력하세요..." maxlength="500"></textarea>
+                    <div class="input-info">
+                        <span id="char-count">0 / 500</span>
+                    </div>
+                </div>
+                
+                <!-- Analyze CTA Button: 강력하지만 정제된 스타일의 버튼 -->
+                <button id="analyze-btn">
+                    <span class="btn-text">감정 분석 시작하기</span>
+                    <div class="loader" id="btn-loader" style="display: none;"></div>
+                </button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 AI Sentiment Analyzer. Claude Style Theme.</p>
+        </footer>
+
+        <!-- 결과 모달: 글래스모피즘 스타일의 센터 배치 -->
+        <div id="result-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div id="modal-body">
+                    <div class="result-icon" id="sentiment-icon" style="font-size: 3.5rem; margin-bottom: 1rem;">😊</div>
+                    <h3 id="sentiment-label" style="font-size: 1.5rem; margin-bottom: 1.5rem;">긍정적입니다</h3>
+                    
+                    <!-- 신뢰도 바 -->
+                    <div class="confidence-bar-container" style="width: 100%; height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; margin-bottom: 0.5rem; overflow: hidden;">
+                        <div id="confidence-bar" style="height: 100%; width: 0%; transition: width 0.8s ease-out;"></div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem;">신뢰도: <span id="confidence-value">0</span>%</p>
+                    
+                    <!-- 분석 이유 박스 -->
+                    <div class="reason-box" style="padding: 1.25rem; background: rgba(255,255,255,0.03); border-radius: 16px; text-align: left;">
+                        <p id="sentiment-reason" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 로직 연결 -->
+    <script src="app.js"></script>
+</body>
+</html>
