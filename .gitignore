@@ -1,0 +1,13 @@
+# 의존성 패키지
+node_modules/
+
+# 환경 변수 및 민감 정보 (보안 필수)
+.env
+.env.local
+backend/.env
+
+# 빌드 결과물 및 임시 파일
+dist/
+.vercel/
+.DS_Store
+Thumbs.db
