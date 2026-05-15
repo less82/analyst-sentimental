@@ -40,8 +40,8 @@ analyzeBtn.addEventListener('click', async () => {
     setLoadingState(true);
 
     try {
-        // 백엔드 API 호출
-        const response = await fetch('http://localhost:3000/api/analyze', {
+        // 백엔드 API 호출 (배포 환경에 대응하기 위해 상대 경로 사용)
+        const response = await fetch('/api/analyze', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text }),
